@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa do Mundo - Cartões de Verdades & Mentiras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .card {
+            perspective: 1000px;
+            height: 380px;
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+        
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .soccer-ball {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-900 to-emerald-950 text-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Cabeçalho -->
+        <div class="text-center mb-12">
+            <div class="flex justify-center mb-6">
+                <i class="fas fa-trophy text-7xl text-yellow-400"></i>
+            </div>
+            <h1 class="text-5xl font-bold mb-3 tracking-tight">COPA DO MUNDO</h1>
+            <p class="text-2xl text-emerald-300">Verdades e Mentiras</p>
+            <p class="mt-4 text-lg max-w-md mx-auto text-emerald-200">
+                Passe o mouse (ou clique) nos cartões para revelar se a notícia é verdadeira ou falsa
+            </p>
+        </div>
+
+        <!-- Grid de Cartões -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Cartão 1 -->
+            <div class="card">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front flex flex-col items-center justify-center p-8 text-center">
+                        <div class="soccer-ball text-8xl mb-6">⚽</div>
+                        <h2 class="text-2xl font-bold leading-tight">
+                            Brasil é o país com mais títulos de Copa do Mundo
+                        </h2>
+                        <div class="mt-8 text-sm opacity-75">Passe o mouse para virar →</div>
+                    </div>
+                    
+                    <!-- Verso -->
+                    <div class="card-back bg-gradient-to-br from-emerald-800 to-teal-900 flex flex-col p-8 text-left">
+                        <div class="mb-4">
+                            <span class="inline-block px-4 py-1 bg-emerald-500 text-white text-sm font-bold rounded-full">VERDADEIRA</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Brasil tem 5 títulos</h3>
+                        <p class="text-emerald-100 leading-relaxed">
+                            O Brasil conquistou a Copa do Mundo em 1958, 1962, 1970, 1994 e 2002. 
+                            É o recordista absoluto, seguido por Alemanha e Itália com 4 títulos cada.
+                        </p>
+                        <div class="mt-auto pt-6 text-xs opacity-70 border-t border-emerald-700">
+                            Fonte: FIFA
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão 2 -->
+            <div class="card">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front flex flex-col items-center justify-center p-8 text-center">
+                        <div class="soccer-ball text-8xl mb-6">⚽</div>
+                        <h2 class="text-2xl font-bold leading-tight">
+                            A Copa do Mundo de 2026 será sediada apenas nos Estados Unidos
+                        </h2>
+                        <div class="mt-8 text-sm opacity-75">Passe o mouse para virar →</div>
+                    </div>
+                    
+                    <!-- Verso -->
+                    <div class="card-back bg-gradient-to-br from-red-800 to-rose-900 flex flex-col p-8 text-left">
+                        <div class="mb-4">
+                            <span class="inline-block px-4 py-1 bg-red-500 text-white text-sm font-bold rounded-full">FALSA</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Será em três países</h3>
+                        <p class="text-rose-100 leading-relaxed">
+                            A Copa de 2026 será sediada por Estados Unidos, Canadá e México (formato de 48 seleções).
+                            Será a primeira edição com três países-sede.
+                        </p>
+                        <div class="mt-auto pt-6 text-xs opacity-70 border-t border-red-700">
+                            Informação oficial da FIFA
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cartão 3 -->
+            <div class="card">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front flex flex-col items-center justify-center p-8 text-center">
+                        <div class="soccer-ball text-8xl mb-6">⚽</div>
+                        <h2 class="text-2xl font-bold leading-tight">
+                            Lionel Messi nunca jogou uma final de Copa do Mundo
+                        </h2>
+                        <div class="mt-8 text-sm opacity-75">Passe o mouse para virar →</div>
+                    </div>
+                    
+                    <!-- Verso -->
+                    <div class="card-back bg-gradient-to-br from-emerald-800 to-teal-900 flex flex-col p-8 text-left">
+                        <div class="mb-4">
+                            <span class="inline-block px-4 py-1 bg-emerald-500 text-white text-sm font-bold rounded-full">FALSA</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Ele foi campeão em 2022</h3>
+                        <p class="text-emerald-100 leading-relaxed">
+                            Em 2022, na Copa do Qatar, Lionel Messi liderou a Argentina à vitória na final contra a França (4x2 nos pênaltis após 3x3 no tempo normal). 
+                            Foi seu primeiro título mundial.
+                        </p>
+                        <div class="mt-auto pt-6 text-xs opacity-70 border-t border-emerald-700">
+                            Final: Argentina 3 (4) x 3 (2) França
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-16 text-emerald-400 text-sm">
+            <p>Feito com ⚽ para quem ama futebol • Passe o mouse nos cartões para testar seus conhecimentos</p>
+        </footer>
+    </div>
+
+    <script>
+        // Clique para flip em dispositivos móveis
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const inner = card.querySelector('.card-inner');
+                if (window.innerWidth < 768) {
+                    inner.style.transform = inner.style.transform === 'rotateY(180deg)' 
+                        ? 'rotateY(0deg)' 
+                        : 'rotateY(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
